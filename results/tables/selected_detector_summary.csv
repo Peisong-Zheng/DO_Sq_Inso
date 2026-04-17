@@ -1,0 +1,2 @@
+amp_sigma,min_persistence_yr,n_detected_calibration,n_reference,n_matched_tol300,precision_tol300,recall_tol300,f1_tol300,median_abs_age_error_tol300_yr,mean_abs_age_error_tol300_yr
+0.27,100,69,68,38,0.5507246376811594,0.5588235294117647,0.5547445255474452,144.5,134.47368421052633

@@ -1,0 +1,2 @@
+proxy,amp_sigma,min_persistence_yr,age_min_yrBP,age_max_yrBP,n_transitions_calibration,n_segments_calibration,n_matched_tol300,precision_tol300,recall_tol300,f1_tol300,median_abs_age_error_tol300_yr,mean_abs_age_error_tol300_yr,n_transitions_full,n_segments_full
+monsoon,0.5,110.0,1000,641250,78,79,35,0.44871794871794873,0.5147058823529411,0.4794520547945206,99.0,125.71428571428571,284,285

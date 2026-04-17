@@ -1,0 +1,4 @@
+proxy,driver,driver_label,n_rows_after_dropna,lag_library_requested,lag_library_effective,lag_library_min_rows_across_lags,rho_metric_xmap_orbital,p_metric_xmap_orbital,rho_orbital_xmap_metric,p_orbital_xmap_metric,best_lag_metric_xmap_orbital_kyr,best_lag_metric_xmap_orbital_rho,best_lag_orbital_xmap_metric_kyr,best_lag_orbital_xmap_metric_rho
+monsoon,pre,precession,619,300,300,605,0.6459395780777561,0.004975124378109453,0.05992642342688027,0.11442786069651742,0,0.4916606145626611,8,0.10061370931377342
+monsoon,obl,obliquity,619,300,300,605,0.6128382366841587,0.004975124378109453,0.13878437653072564,0.004975124378109453,-4,0.5037739911844021,-7,0.2612733942173836
+monsoon,ecc,eccentricity,619,300,300,605,0.7080063530261074,0.004975124378109453,0.45916266785361254,0.004975124378109453,8,0.595153499909087,6,0.5529617255479651

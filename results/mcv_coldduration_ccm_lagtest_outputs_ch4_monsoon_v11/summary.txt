@@ -1,0 +1,46 @@
+Cold-duration focused CCM and robust lag-test for CH4 and monsoon
+Downsample=1000 yr, E=4, tau=-2, row1 surrogates=200
+Lag range=-8..8 kyr
+Cold-duration smoothing points=0 (0 means none)
+Lag-test method: Van Nes style bootstrapped library sets (n=100, requested library size=300, fraction cap=0.6) + Gaussian smoothing (sigma=1.0).
+
+Lag sign convention: arrays are sorted from old to young age, so +lag means the target series is sampled at younger ages than the source; -lag means older ages.
+
+Proxy: ch4 (CH$_4$)
+  rows after dropna = 779
+  effective lag library size = 300 (requested 300)
+  Driver: pre
+    CCM   fwd (cold duration xmap orbital): rho=0.388, p=0.005
+    CCM   rev (orbital xmap cold duration): rho=-0.051, p=0.821
+    LAG   fwd: best lag=4 kyr, rho=0.264
+    LAG   rev: best lag=8 kyr, rho=0.046
+  Driver: obl
+    CCM   fwd (cold duration xmap orbital): rho=0.597, p=0.005
+    CCM   rev (orbital xmap cold duration): rho=0.278, p=0.005
+    LAG   fwd: best lag=-4 kyr, rho=0.448
+    LAG   rev: best lag=-8 kyr, rho=0.378
+  Driver: ecc
+    CCM   fwd (cold duration xmap orbital): rho=0.575, p=0.005
+    CCM   rev (orbital xmap cold duration): rho=0.553, p=0.005
+    LAG   fwd: best lag=8 kyr, rho=0.447
+    LAG   rev: best lag=-6 kyr, rho=0.543
+
+Proxy: monsoon (Monsoon d$^{18}$O)
+  rows after dropna = 619
+  effective lag library size = 300 (requested 300)
+  Driver: pre
+    CCM   fwd (cold duration xmap orbital): rho=0.646, p=0.005
+    CCM   rev (orbital xmap cold duration): rho=0.060, p=0.114
+    LAG   fwd: best lag=0 kyr, rho=0.492
+    LAG   rev: best lag=8 kyr, rho=0.101
+  Driver: obl
+    CCM   fwd (cold duration xmap orbital): rho=0.613, p=0.005
+    CCM   rev (orbital xmap cold duration): rho=0.139, p=0.005
+    LAG   fwd: best lag=-4 kyr, rho=0.504
+    LAG   rev: best lag=-7 kyr, rho=0.261
+  Driver: ecc
+    CCM   fwd (cold duration xmap orbital): rho=0.708, p=0.005
+    CCM   rev (orbital xmap cold duration): rho=0.459, p=0.005
+    LAG   fwd: best lag=8 kyr, rho=0.595
+    LAG   rev: best lag=6 kyr, rho=0.553
+
