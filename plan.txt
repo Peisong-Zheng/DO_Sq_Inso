@@ -1,0 +1,27 @@
+研究DO事件序列是否受到轨道参数驱动（选题参考文献：Zhang et al., 2021）
+数据：Composite CH4数据；Monsoon d18O数据
+方法：
+1. Composite CH4数据，Monsoon d18O数据 经过10kyr高通滤波器过滤出高频成分
+2. 使用偏离中值多少个标准差和事件持续多长时间作为两个参数，用来筛选滤波后的数据，获取满足条件的数据转换为对应的冷或暖期
+3. 调整参数使得筛选的[0,1]序列和已知的NGRIP序列的F1 score 最大，最后将这组参数应用于末次冰期外的剩余数据，得到千年尺度气候波动（MCV）序列
+4. 在20,000 滑动窗口中计算MCV序列中的平均冷期时长
+5. 使用双向 CCM 评估轨道参数与平均冷期时长之间的动力学耦合，分别计算 cold_duration xmap orbital 和 orbital xmap cold_duration 的 cross-map skill（ρ），并通过随机互换构建 null distribution 进行显著性检验。
+6. 对CH4和Monsoon数据的cold_duration分别进行的频谱分析，同时还对两者和三个轨道参数的组合分别做了互功率谱分析
+
+结果：
+1. CH4和Monsoon数据都表明轨道参数和cold_duration和轨道参数存在较强的耦合关系
+2. OBL和ECC可能对冷期时长存在很强的调控关系，双向 cross-map skill 显著，说明两者处于同一个强耦合动力系统中
+3. CH4的cold_duration在pre和obl频段有小峰值，monsoon的cold_duration没有。
+4. 在共计6个互功率谱排列组合中，只有CH4 cold_duration和pre这组显示出了较高的coherence（超过0.6）其他各组在相应频段上的coherence都小于0.4，例如CH4 cold_duration x obl，在obl频段coherence 约为0.3
+
+敏感性实验：
+1. 尝试使用未经NGRIP校准的MCV序列（直接在median处把滤波后的数据按低于或高于median强制指派为冷或暖期）左CCM分析，结果1和2保存不变。
+2. 为探究岁差（pre）对cold_duration的影响是否受到的幅度（受ecc调控）和控制，使用仅包含相位的岁差数据（使用ecc消除了pre的振幅变化）做CCM分析，仍存在显著的单向耦合（从轨道参数到cold_duration）
+
+局限性 / 待进一步检验的问题
+1. CH4 和 monsoon 原始数据时间分辨率不均匀，可能影响事件识别的稳定性，并进一步传播到 cold-duration metric 的估计。后续需要通过重采样策略、分辨率降级实验或 synthetic tests 评估这一影响。
+
+讨论：
+1. 轨道参数影对cold duration影响的lag是多少？为解答问题做了lag-max rho 分析（参考了Ye et al.2015 和Van Nes et al., 2015），在[-8,8]kyr内寻找让rho最大的lag,发现lag不好约束 (有些组合的最大值在边界，或rho曲线过于平坦，没有明显最大值)
+2. 轨道参数对cold duration的影响是直接的还是间接的（例如通过冰量变化(lr04数据)，或二氧化碳浓度变化）。实验发现两者对cold_duration都存在显著的双向耦合，lag不好约束 （原因同上，因此难以通过lag的对比判断轨道对cold_duration的影响是直接的还是通过ice volume变化还是CO2变化间接的）
+3. 我还测试了轨道参数和两万年滑动窗口计算的另外两个指标（warming event No., cold fraction）之间的CCM skill. 发现存在部分显著的组合，但rho值很低，最大的一组达到0.5，其余都在0.3左右

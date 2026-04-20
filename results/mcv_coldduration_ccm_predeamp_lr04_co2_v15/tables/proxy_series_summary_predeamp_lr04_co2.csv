@@ -1,7 +1,0 @@
-proxy,driver,driver_label,n_rows_before_dropna,n_rows_after_dropna,n_valid_embedding_rows,min_rows_across_lags,requested_library_size,effective_library_size
-ch4,pre_phase_like,precession de-amplitude,779,779,773,765,200,200
-ch4,lr04_10k,LR04 10-kyr smooth,779,779,773,765,200,200
-ch4,co2_10k,CO$_2$ 10-kyr smooth,779,779,773,765,200,200
-monsoon,pre_phase_like,precession de-amplitude,621,619,613,605,200,200
-monsoon,lr04_10k,LR04 10-kyr smooth,621,619,613,605,200,200
-monsoon,co2_10k,CO$_2$ 10-kyr smooth,621,619,613,605,200,200
